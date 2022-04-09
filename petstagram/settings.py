@@ -1,4 +1,5 @@
 from pathlib import Path
+import django_heroku
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -148,3 +149,5 @@ LOGGING = {
 }
 
 AUTH_USER_MODEL = 'accounts.PetstagramUser'
+
+django_heroku.settings(locals())
