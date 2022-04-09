@@ -24,7 +24,7 @@ class PetPhotoDetailsView(auth_mixin.LoginRequiredMixin, views.DetailView):
         return context
 
 
-class CreatePetPhotoView(auth_mixin.LoginRequiredMixin, views.CreateView):  # LoginRequiredMixin is required
+class CreatePetPhotoView(auth_mixin.LoginRequiredMixin, views.CreateView):
     model = PetPhoto
     template_name = 'main/photo_create.html'
     fields = ('photo', 'description', 'tagged_pets')

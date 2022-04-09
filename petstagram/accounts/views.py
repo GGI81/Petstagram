@@ -1,4 +1,3 @@
-from django.contrib.auth import mixins as auth_mixins
 from django.views import generic as views
 from django.contrib.auth import views as auth_views
 from django.urls import reverse_lazy
@@ -36,7 +35,7 @@ class ChangeUserPasswordView(auth_views.PasswordChangeView):
     template_name = 'accounts/change_password.html'
 
 
-class ProfileDetailsView(auth_mixins.LoginRequiredMixin, views.DetailView):
+class ProfileDetailsView(views.DetailView):
     model = Profile
     template_name = 'main/../../templates/accounts/profile_details.html'
     context_object_name = 'profile'
